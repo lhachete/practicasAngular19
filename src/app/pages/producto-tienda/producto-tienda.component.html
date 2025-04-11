@@ -1,0 +1,18 @@
+<div class="container mt-5">
+
+    <h1 class="text-center text-info">Tienda de Productos</h1>
+    <h2 class="text-danger text-center mb-4">Listado de Productos</h2>
+
+    <ul class="list-group w-50 mx-auto text-center">
+    @for (item of listadoProductos; track $index) {
+        <li class="list-group-item"> {{item.descripcion}}, ${{item.precio}} </li>
+    }
+    </ul>
+
+    <h3 class="text-center text-success my-4">Agregar Nuevo Producto</h3>
+    <div class="d-flex gap-2 justify-content-center">
+    <input placeholder="Descripción Producto" class="rounded-2 bg-body border-white p-1 " [(ngModel)]="inputDesc" type="text">
+    <input placeholder="Precio" class="rounded-2 bg-body border-white" [(ngModel)]="inputNumb" type="number">
+    <button (click)="insertarProducto()" class="bg-primary rounded-2 border-0 px-2 py-1" >Agregar</button>
+</div>
+</div>

@@ -1,0 +1,27 @@
+<h2 class="text-center text-success">
+    Property Binding en Angular
+</h2>
+
+
+    <legend class="fs-6 mt-4 text-center fw-bold"> Formulario Normal</legend>
+    <fieldset class="text-center">
+    <label for="inputTexto" class="pe-2 mt-2">Escribe lo que quieras:</label>
+    <input id="inputTexto" type="text" (input)="actualizarForm($event)">
+    </fieldset>
+    <fieldset class="text-center mt-2">
+    <label for="replicaTexto" class="pe-2 mt-2">Valor escrito: </label>
+    <input id="replicaTexto" type="text" [value]="texto" disabled>
+    </fieldset>
+
+
+
+    <legend class="fs-6 mt-4 text-center fw-bold"> Forms Module</legend>
+    <fieldset class="text-center mt-2">
+    <label for="inputTexto2" class="pe-2 mt-2">Escribe lo que quieras:</label>
+    <input id="inputTexto2" type="text" [(ngModel)]="texto2" >
+    </fieldset>
+    <fieldset class="text-center mt-2">
+    <label for="replicaTexto2" class="pe-2 mt-2">Valor escrito: </label>
+    <input id="replicaTexto2" type="text" [value]="texto2"  disabled>
+    </fieldset>
+

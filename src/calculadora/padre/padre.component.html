@@ -1,0 +1,13 @@
+<div class="container d-flex align-items-center flex-column gap-4">
+    <h1 class="text-warning mt-5">Aplicación Calculadora</h1>
+
+    <app-hijo (resultado)="recibirResultado($event)" />
+
+    @if (resultado) {
+    <p>Resultado:
+        {{ resultado }}
+    </p>
+    } @else {
+    <p>Introduce tu operación</p>
+    }
+</div>

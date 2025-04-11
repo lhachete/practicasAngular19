@@ -1,0 +1,7 @@
+<p class="text-center">Descripción: {{ producto.descripcion }}, Precio: ${{ producto.precio }}</p>
+
+
+
+@for (prod of getProductos(); track $index) {
+    <p class="text-primary text-center">Descripción: {{ prod.descripcion }}, Precio: ${{ prod.precio }}</p>
+}
