@@ -1,15 +1,12 @@
 
-
-<h1>Counter component</h1>
-<h2>Counter: {{ counter }}</h2>
-<button (click)="increaseBy(-1)">-1</button>
-<button (click)="resetCounter()">Reset</button>
-<button (click)="increaseBy(1)">+1</button>
-
-<div class="container mt-4">
-    <h1 class="text-center text-info">{{ title }}</h1>
-    <app-listado-productos/>
+<div class="container my-4 text-center">
+    <h1>Counter component</h1>
+    <h2>Counter: {{ counter }}</h2>
+    <button (click)="increaseBy(-1)">-1</button>
+    <button (click)="resetCounter()">Reset</button>
+    <button (click)="increaseBy(1)">+1</button>
 </div>
+
 <div class="container mt-4">
     <app-property-binding/>
 </div>

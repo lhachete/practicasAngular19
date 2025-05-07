@@ -8,12 +8,30 @@ import { Component, computed, signal } from '@angular/core';
 })
 export class ProductoComponent {
   producto = { descripcion: "Nuevo Producto", precio: 100}
+
   private productos = signal([
-    { descripcion: "Producto A", precio: 125 },
-    { descripcion: "Producto B", precio: 150 },
-    { descripcion: "Producto C", precio: 200 }
+    { descripcion: "Champiñones", precio: 125 },
+    { descripcion: "Cornetos", precio: 150 },
+    { descripcion: "Mandarinas", precio: 200 }
   ]);
 
+  filtroTexto = signal('');
 
-  getProductos = computed(() => this.productos())
+
+  getProductosFiltrados = computed(()=>
+    this.productos().filter(desc => desc.descripcion.toLowerCase().includes(
+      this.filtroTexto().toLowerCase()
+    ))
+  );
+
+  actualizarFiltro(valor: string) {
+    this.filtroTexto.set(valor);
+  }
+
+  onInputChange(event: Event): void {
+    const inputElement = event.target as HTMLInputElement;
+    this.filtroTexto.set(inputElement.value);
+  }
+  
+
 }

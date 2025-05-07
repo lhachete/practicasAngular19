@@ -1,15 +1,17 @@
 import { Component } from '@angular/core';
 import { Producto } from '../producto/producto.model';
 import { FormsModule } from '@angular/forms';
+import { ProductoComponent } from '../producto/producto.component';
 
 @Component({
   selector: 'app-producto-tienda',
-  imports: [FormsModule],
+  imports: [FormsModule, ProductoComponent],
   templateUrl: './producto-tienda.component.html',
   styleUrl: './producto-tienda.component.css'
 })
 export class ProductoTiendaComponent {
 
+  title = "Tienda Online";
   inputDesc: string = "";
   inputNumb: number | null  = null;
 
